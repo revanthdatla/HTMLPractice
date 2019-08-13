@@ -1,0 +1,25 @@
+{
+  "name": "htmlpractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revanthdatla/HTMLPractice.git"
+  },
+  "author": "Revanth Datla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revanthdatla/HTMLPractice/issues"
+  },
+  "homepage": "https://github.com/revanthdatla/HTMLPractice#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5"
+  }
+}
