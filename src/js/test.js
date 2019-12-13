@@ -15,7 +15,7 @@ if (typeof module !== 'undefined') {
 
 function Emitter(obj) {
     if (obj) return mixin(obj);
-};
+}
 
 /**
  * Mixin the emitter properties.
@@ -62,6 +62,7 @@ Emitter.prototype.on =
 Emitter.prototype.once = function(event, fn){
     function on() {
         this.off(event, on);
+        console.log(arguments);
         fn.apply(this, arguments);
     }
 
@@ -176,13 +177,25 @@ Emitter.prototype.hasListeners = function(event){
 
 function test()
 {
-    const emitter = new Emitter({});
+    // Emitter instance
+    const emitter = new Emitter();
 
-    emitter.once('click1', () => { console.log('click1')});
+    // as a mixin
+    const emitter2 = Emitter({});
 
-    emitter.once('click1', () => { console.log('click2')});
+    // prototype mixin
+    const obj = function ()
+    {
 
-    emitter.emit('click1');
+    };
+
+    Emitter(obj.prototype);
+
+    for (let key in obj) console.log(key);
+
+    const keys = Object.keys(obj);
+
+    console.log(keys);
 }
 
 test();
