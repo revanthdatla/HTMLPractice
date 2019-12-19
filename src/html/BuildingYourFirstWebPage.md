@@ -329,6 +329,169 @@ It is important to note the value of cross-browser compatibility and testing.
 Websites doesn't need to look alike in every browser but should be close.
 It is based on which browser you would like to support and to what degree.
 ```
+
+## Other CSS Terminology
+
+### Rule Set
+A rule set is a single section in a CSS file including selector, curly
+braces and the different lines with properties and values.
+
+```
+#container {
+    height: auto;
+    width: auto;
+}
+```
+
+### Declaration Block
+A declaration block is the section in CSS where property/value pairs
+appear. In the example below, everything between curly braces is called
+declaration block.
+
+```
+body {
+    color: white;
+    height: auto;
+    width: auto;
+}
+```
+
+### Declaration
+Any single line of CSS that appears within the curly braces is called
+declaration.
+
+### Universal Selector
+The universal Selector matches any element within the context in which
+it's placed. For example, in the below example `*` is Universal
+Selector.
+
+```
+.navigation ul * {
+    width: 100px;
+    flat: left;
+}
+```
+
+Here any elements which are descendants of `ul` element within inside an
+element with a class name of `navigation` with receive the declared
+styles.
+
+### Attribute Selector
+An attribute selector selects an element to style based on an attribute
+and/or attribute value.
+
+Below example, targets paragraph element based on the existence of
+`style` attribute.
+
+```
+p[style] {
+    color: blue;
+}
+```
+
+In the following example, attribute selector targets an input element
+based on the existence of `type` attribute with an value of `text`.
+
+```
+input[type='text'] {
+    border: auto;
+}
+```
+
+### Pseudo-Class
+A Pseudo-Class works similarly to a regular CSS class, except it's not
+explicitly declared in HTML document.
+
+In the example below, pseudo-class is added to the anchor element.
+
+```
+a:hover {
+    color: green;
+}
+```
+
+Pseudo-Class will always have a colon sign `:` followed by an identifer
+of some sort with no space before or after it. Other pseudo-class
+includes `:visited`, `:focus` and `:first-child`.
+
+### Pseudo-Element
+A Pseudo-Element is not same as Pseudo-Class. While a Pseudo-Class
+matches the actual element, a Pseudo-Element target `virtual` elements
+that can change depending on the actual HTML.
+
+CSS2 uses a single colon `:` and in CSS3 Pseudo-Elements uses `::`
+double colon.
+
+CSS2 Example
+
+```
+p:first-letter {
+    display: block;
+}
+```
+
+CSS3 Example
+
+```
+::selection {
+    background: green;
+}
+```
+### Combinator
+A combinator is a character in a selector that connects two selectors
+together. They are four types of combinators.
+
+- A space character.
+- A `>` character - child selectors.
+- A `+` character - adjacent sibling selectors.
+- A `~` character - general sibling selectors.
+
+### At-Rule
+A at-rule is an instructions given in a CSS document using the `@`
+character. It could have a declaration block or a simple string of text.
+
+```
+@import url(secondary.css)
+
+@media print {
+    #container {
+        width: 500px;
+    }
+}
+```
+
+Here at-rule is not just the `@import` or `@media` part, it comprises
+the complete at-rule.
+
+### Statement
+A statement is any at-rule or rule-set.
+
+### Identifier
+An identifier can be anything that appears as a property, id, class,
+keyword value and at-rule.
+
+```
+body {
+    height: 14px;
+    width: auto;
+}
+```
+
+In the above example, `body`, `height`, `width`, `auto` are identifiers.
+`14px` is not an identifier has it is not a keyword value lie `auto`.
+
+### Keyword
+A keyword is a value of a property which is like a reserved word for
+particular property. Different properties have different keyword. All
+properties allow keyword `inherit`.
+
+In the example below `auto` is a keyword.
+
+```
+#container {
+    height: auto;
+}
+```
 ##### Explore
 1. What will be the html document type declaration if we wanted to
    specify a specific version of HTML rather than the latest one?
