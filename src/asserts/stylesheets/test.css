@@ -1,0 +1,19 @@
+/* Combinator - descendent CSS Rule set */
+div#descendent p {
+    background-color: yellow;
+}
+
+/* Combinator - child selector CSS Rule set*/
+div#child>p {
+    background-color: brown;
+}
+
+/* Combinator - adjacent siblings selector CSS Rule set*/
+div.adjacent+p {
+    background-color: green;
+}
+
+/* Combinator - general siblings selector CSS Rule set*/
+div.general~p {
+    background-color: blue;
+}
