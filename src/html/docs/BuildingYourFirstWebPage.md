@@ -330,11 +330,248 @@ Websites doesn't need to look alike in every browser but should be close.
 It is based on which browser you would like to support and to what degree.
 ```
 
-## Resources
-- [Common HTML Terms](http://www.scriptingmaster.com/html/HTML-terms-glossary.asp) via scripting masters.
-- [CSS Terms and Definitions](https://www.impressivewebs.com/css-terms-definitions/) via impressive webs.
+## Other CSS Terminology
 
+### Rule Set
+A rule set is a single section in a CSS file including selector, curly
+braces and the different lines with properties and values.
 
+```
+#container {
+    height: auto;
+    width: auto;
+}
+```
+
+### Declaration Block
+A declaration block is the section in CSS where property/value pairs
+appear. In the example below, everything between curly braces is called
+declaration block.
+
+```
+body {
+    color: white;
+    height: auto;
+    width: auto;
+}
+```
+
+### Declaration
+Any single line of CSS that appears within the curly braces is called
+declaration.
+
+### Universal Selector
+The universal Selector matches any element within the context in which
+it's placed. For example, in the below example `*` is Universal
+Selector.
+
+```
+.navigation ul * {
+    width: 100px;
+    flat: left;
+}
+```
+
+Here any elements which are descendants of `ul` element within inside an
+element with a class name of `navigation` with receive the declared
+styles.
+
+### Attribute Selector
+An attribute selector selects an element to style based on an attribute
+and/or attribute value.
+
+Below example, targets paragraph element based on the existence of
+`style` attribute.
+
+```
+p[style] {
+    color: blue;
+}
+```
+
+In the following example, attribute selector targets an input element
+based on the existence of `type` attribute with an value of `text`.
+
+```
+input[type='text'] {
+    border: auto;
+}
+```
+
+### Pseudo-Class
+A Pseudo-Class works similarly to a regular CSS class, except it's not
+explicitly declared in HTML document.
+
+In the example below, pseudo-class is added to the anchor element.
+
+```
+a:hover {
+    color: green;
+}
+```
+
+Pseudo-Class will always have a colon sign `:` followed by an identifer
+of some sort with no space before or after it. Other pseudo-class
+includes `:visited`, `:focus` and `:first-child`.
+
+### Pseudo-Element
+A Pseudo-Element is not same as Pseudo-Class. While a Pseudo-Class
+matches the actual element, a Pseudo-Element target `virtual` elements
+that can change depending on the actual HTML.
+
+CSS2 uses a single colon `:` and in CSS3 Pseudo-Elements uses `::`
+double colon.
+
+CSS2 Example
+
+```
+p:first-letter {
+    display: block;
+}
+```
+
+CSS3 Example
+
+```
+::selection {
+    background: green;
+}
+```
+### Combinator
+A combinator is a character in a selector that connects two selectors
+together. They are four types of combinators.
+
+#### A space character ` ` selects all the descendents of an elements.
+
+``` Descendents example
+<!--    Combinator descendent example -->
+    <div id="descendent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+    </div>
+
+    <p>Paragraph4</p>
+    <p>Paragraph5</p>
+
+/* Combinator - descendent CSS Rule set */
+div#descendent p {
+    background-color: yellow;
+}
+```
+Here in the above example, all the paragraph elements which are
+descendents of `div` element are targeted with the CSS rule set. Just to
+note paragraph element within `section` is also an descent of `div`
+element.
+
+#### A `>` character - child selectors.
+
+``` Child Selector Example
+<!-- Combinator child example-->
+    <div id="child">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+        <p>Paragraph4</p>
+    </div>
+
+    <p>Paragraph5</p>
+    <p>Paragraph6</p>
+    
+/* Combinator - child selector CSS Rule set*/
+div#child>p {
+    background-color: brown;
+}
+```
+
+#### A `+` character - adjacent sibling selectors.
+
+``` Adjacent Sibling Selector
+<!--    Combinator Adjacent Sibling -->
+    <div class="adjacent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    <p>Paragraph3</p>
+
+    <div class="adjacent"></div>
+    <p>Paragraph4</p>
+    
+/* Combinator - adjacent siblings selector CSS Rule set*/
+div.adjacent+p {
+    background-color: green;
+}
+```
+
+#### A `~` character - general sibling selectors.
+
+``` General Sibling Example
+<!--    Combinator general siblings -->
+    <div class="general">
+        <p>Paragraph1</p>
+    </div>
+
+    <p>Paragraph2</p>
+    <code>example</code>
+    <p>Paragraph3</p>
+    <div><p>Paragraph4</p></div>
+
+/* Combinator - general siblings selector CSS Rule set*/
+div.general~p {
+    background-color: blue;
+}
+```
+
+### At-Rule
+A at-rule is an instructions given in a CSS document using the `@`
+character. It could have a declaration block or a simple string of text.
+
+```
+@import url(secondary.css)
+
+@media print {
+    #container {
+        width: 500px;
+    }
+}
+```
+
+Here at-rule is not just the `@import` or `@media` part, it comprises
+the complete at-rule.
+
+### Statement
+A statement is any at-rule or rule-set.
+
+### Identifier
+An identifier can be anything that appears as a property, id, class,
+keyword value and at-rule.
+
+```
+body {
+    height: 14px;
+    width: auto;
+}
+```
+
+In the above example, `body`, `height`, `width`, `auto` are identifiers.
+`14px` is not an identifier has it is not a keyword value lie `auto`.
+
+### Keyword
+A keyword is a value of a property which is like a reserved word for
+particular property. Different properties have different keyword. All
+properties allow keyword `inherit`.
+
+In the example below `auto` is a keyword.
+
+```
+#container {
+    height: auto;
+}
+```
 ##### Explore
 1. What will be the html document type declaration if we wanted to
    specify a specific version of HTML rather than the latest one?

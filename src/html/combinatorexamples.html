@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Styles Conference</title>
+    <link rel="stylesheet" href="../asserts/stylesheets/test.css">
+</head>
+<body>
+    <h1>Styles Conference</h1>
+    <p>Every year the brightest web designers and front-end developers descend on Chicago to discuss the latest
+        technologies. Join us this August!</p>
+
+<!--    Combinator descendent example -->
+    <div id="descendent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+    </div>
+
+    <p>Paragraph4</p>
+    <p>Paragraph5</p>
+
+<!-- Combinator child example-->
+    <div id="child">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+        <p>Paragraph4</p>
+    </div>
+
+    <p>Paragraph5</p>
+    <p>Paragraph6</p>
+
+<!--    Combinator Adjacent Sibling -->
+    <div class="adjacent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    <p>Paragraph3</p>
+
+    <div class="adjacent"></div>
+    <p>Paragraph4</p>
+
+<!--    Combinator general siblings -->
+    <div class="general">
+        <p>Paragraph1</p>
+    </div>
+
+    <p>Paragraph2</p>
+    <code>example</code>
+    <p>Paragraph3</p>
+    <div><p>Paragraph4</p></div>
+</body>
+</html>
