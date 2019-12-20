@@ -329,6 +329,12 @@ It is important to note the value of cross-browser compatibility and testing.
 Websites doesn't need to look alike in every browser but should be close.
 It is based on which browser you would like to support and to what degree.
 ```
+
+## Resources
+- [Common HTML Terms](http://www.scriptingmaster.com/html/HTML-terms-glossary.asp) via scripting masters.
+- [CSS Terms and Definitions](https://www.impressivewebs.com/css-terms-definitions/) via impressive webs.
+
+
 ##### Explore
 1. What will be the html document type declaration if we wanted to
    specify a specific version of HTML rather than the latest one?
