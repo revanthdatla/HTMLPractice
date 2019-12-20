@@ -441,10 +441,90 @@ CSS3 Example
 A combinator is a character in a selector that connects two selectors
 together. They are four types of combinators.
 
-- A space character.
-- A `>` character - child selectors.
-- A `+` character - adjacent sibling selectors.
-- A `~` character - general sibling selectors.
+#### A space character ` ` selects all the descendents of an elements.
+
+``` Descendents example
+<!--    Combinator descendent example -->
+    <div id="descendent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+    </div>
+
+    <p>Paragraph4</p>
+    <p>Paragraph5</p>
+
+/* Combinator - descendent CSS Rule set */
+div#descendent p {
+    background-color: yellow;
+}
+```
+Here in the above example, all the paragraph elements which are
+descendents of `div` element are targeted with the CSS rule set. Just to
+note paragraph element within `section` is also an descent of `div`
+element.
+
+#### A `>` character - child selectors.
+
+``` Child Selector Example
+<!-- Combinator child example-->
+    <div id="child">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+        <section>
+            <p>Paragraph3</p>
+        </section>
+        <p>Paragraph4</p>
+    </div>
+
+    <p>Paragraph5</p>
+    <p>Paragraph6</p>
+    
+/* Combinator - child selector CSS Rule set*/
+div#child>p {
+    background-color: brown;
+}
+```
+
+#### A `+` character - adjacent sibling selectors.
+
+``` Adjacent Sibling Selector
+<!--    Combinator Adjacent Sibling -->
+    <div class="adjacent">
+        <p>Paragraph1</p>
+        <p>Paragraph2</p>
+    </div>
+    <p>Paragraph3</p>
+
+    <div class="adjacent"></div>
+    <p>Paragraph4</p>
+    
+/* Combinator - adjacent siblings selector CSS Rule set*/
+div.adjacent+p {
+    background-color: green;
+}
+```
+
+#### A `~` character - general sibling selectors.
+
+``` General Sibling Example
+<!--    Combinator general siblings -->
+    <div class="general">
+        <p>Paragraph1</p>
+    </div>
+
+    <p>Paragraph2</p>
+    <code>example</code>
+    <p>Paragraph3</p>
+    <div><p>Paragraph4</p></div>
+
+/* Combinator - general siblings selector CSS Rule set*/
+div.general~p {
+    background-color: blue;
+}
+```
 
 ### At-Rule
 A at-rule is an instructions given in a CSS document using the `@`
