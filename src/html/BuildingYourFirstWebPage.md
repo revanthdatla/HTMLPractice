@@ -577,6 +577,5 @@ In the example below `auto` is a keyword.
    specify a specific version of HTML rather than the latest one?
 2. Write HTML code using self closing elements mentioned above?
 
-
    
 
