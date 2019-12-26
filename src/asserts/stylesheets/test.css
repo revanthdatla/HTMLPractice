@@ -1,19 +1,15 @@
-/* Combinator - descendent CSS Rule set */
-div#descendent p {
-    background-color: yellow;
+.btn {
+    font-size: 16px;
 }
 
-/* Combinator - child selector CSS Rule set*/
-div#child>p {
-    background-color: brown;
+.btn-danger {
+    background: red;
 }
 
-/* Combinator - adjacent siblings selector CSS Rule set*/
-div.adjacent+p {
-    background-color: green;
-}
-
-/* Combinator - general siblings selector CSS Rule set*/
-div.general~p {
-    background-color: blue;
+.btn-success {
+    cursor: pointer;
+    margin: auto;
+    font-family: Verdana, Geneva, sans-serif;
+    text-indent: -9999px;
+    color: maroon;
 }

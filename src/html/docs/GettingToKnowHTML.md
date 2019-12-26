@@ -158,8 +158,115 @@ Heading elements, are used to designate multiple levels of text headings
 throughout a page.
 
 ### Navigation
+The `<nav>` element identifies a section of major navigational links on
+a page. The `<nav>` element should be reserved for primary navigation
+sections only, such as global navigation, table of content,
+previous/next links, or other noteworthy groups of navigational links.
 
+Generally, links included within the `<nav>` element will link to other
+pages within the same website or to parts of the same web page.
+Miscellaneous one-off links should not be wrapped within the navigation
+element; they should use the anchor element `<a>` and the anchor element
+alone.
 
+<!--    Navigation element -->
+    <nav>...</nav>
+
+### Article
+
+<!--    Article -->
+    <article>...</article>
+    
+### Section
+    
+### Deciding between `<article>`, `<section>`, or `<div>` elements
+
+### Aside
+
+### Footer
+
+## Encoding Special Characters
+Special Characters include various punctuation marks, accented letters,
+and symbols. When typed directly into HTML, they can be misunderstood or
+mistaken for the wrong character; thus they need to be encoded.
+
+Each encoded character begins with a ampersand, `&`, and end with a
+semicolon, `;`. What falls between the ampersand and semicolon is a
+character's unique encoding, be it a name or numeric encoding.
+
+## Creating Hyperlinks
+Along with the text, one of the core components of the internet is the
+hyperlink, which provides the ability to link from one web page or
+resource to another. Hyperlinks are established using the anchor `<a>`
+inline-level element. In order to create a link a `href` attribute is
+required. It identifies the destination of the link.
+
+### Wrapping Block-level elements with Anchors
+By nature anchor element, `<a>`, is an inline-level element, and
+according to web standards, inline-elements may not wrap block-level
+elements. With the introduction of HTML5, anchor elements specifically
+have permission to wrap either block or inline or any other level
+elements. This is break from standard convention, but it is permissible
+in order to enable entire blocks of content on a page to become links.
+
+## Relative and Absolute Paths
+The two most common types of links are links to other pages of the same
+website and links to other websites. These links are identified using
+`href` attribute values, also known as paths.
+
+Links pointing to the other pages of the same website will have a
+relative path, which does not include a domain name.
+
+Linking to other websites outside of the current one requires an
+absolute path, where the `href` attribute value must include the full
+domain. For example, a link to google home page need the href value
+starting with `http://google.com`.
+
+## Linking to an Email Address
+To create a email link, the href attribute value needs to start with
+`mailto:` followed by the email address. 
+
+Additionally, subject, body, text and other information for the email
+may be populated. To add a subject line, the `subject=` parameter will
+be followed after the email address. The first parameter after the email
+address needs to start with question mark, `?`, to bind it to the
+hyperlink path. Multiple words within a subject line require that spaces
+be encoded using `%20`.
+
+Adding body text works in the same way as subject text, this time using
+the `body=` parameter in the `href` attribute. Because we are binding
+one parameter to the another we need to use the ampersand, `&`, to
+separate the two. As with the subject spaces must be encoded using %20,
+the line breaks must be encoded using `%0A`.
+
+Altogether a link to `revanth.datla@gmail.com` with the subject of
+"Reaching Out" and body text of "How are you" would require a href value
+of
+
+## Opening Links in a new Window
+One feature available within hyperlinks is the ability to determine
+where the link should be open when clicked. Typically, links are opened
+in the same window from which they are clicked; however, links may also
+be opened in a new windows.
+
+To trigger the action of opening a link on a new window, use the
+`target` attribute with a value of `_blank`. The target attribute
+determines where the link will be displayed and the `_blank` value
+specifies a new window.
+
+## Linking to parts of the same page
+The common example of these same-page links are "Back to top" links
+return a user to the top of a page.
+
+A on-page link can be created by first setting an `id` attribute on the
+element we wish to link to, then using the the value of that `id`
+attribute within an anchor element's `href` attribute value.
 
 #### Explore
 1. Write block and inline examples?
+
+#### References
+1. [Semantic Code: What? Why? How?](http://boagworld.com/dev/semantic-code-what-why-how/)
+2. [New Structural Elements in HTML5](https://dev.opera.com/articles/new-structural-elements-in-html5/)
+3. [The i, b, em, and strong elements](http://html5doctor.com/i-b-em-strong-element/)
+4. [The Full mailto Link syntax](https://yoast.com/)
