@@ -1,0 +1,14 @@
+.box
+{
+    width: 100px;
+    height: 100px;
+    border: 2px solid red;
+    overflow-y: auto;
+}
+
+.box2 {
+    width: 100px;
+    font-size: 250%;
+    border: 2px solid black;
+    overflow-x: scroll;
+}

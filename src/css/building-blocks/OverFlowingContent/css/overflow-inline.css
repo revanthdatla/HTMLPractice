@@ -1,0 +1,7 @@
+.box
+{
+    inline-size: 100px;
+    writing-mode: horizontal-tb;
+    border: 2px solid black;
+    font-size: 250%;
+}
