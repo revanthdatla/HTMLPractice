@@ -1,0 +1,12 @@
+.container
+{
+    display: grid;
+    grid: 3fr 14fr / auto-flow 4fr 2fr;
+    grid-gap: 20px;
+    height: 100vh;
+}
+
+.grid-item
+{
+    background-color: crimson;
+}
