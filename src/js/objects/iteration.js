@@ -18,9 +18,9 @@ function iterateOverIndices()
 export function iterationUsingIterator(list = [4, 5, 6])
 {
     // Arrays have a built-in @@iterator
-    // @@iterator is a internal property of an object, it is access using
+    // @@iterator is a internal property of an object, it is accessed using
     // ES6 symbol: Symbol.iterator.The value of @@iterator is not an iterator
-    // object, but a function that return a iterator object.
+    // object, but a function that returns a iterator object.
     const it = list[Symbol.iterator]();
 
     // the return value of the iterator's next call is an object of form
