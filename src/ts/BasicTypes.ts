@@ -1,8 +1,18 @@
-/* Boolean */
-let isValid: boolean = false;
+class Customer {
+    name: string;
 
-/* Number */
-let decimal: number = 5;
-let hex: number = 0x00d;
-let bin: number = 0b1010;
-let octal: number = 0o744;
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    announce()
+    {
+        return "Hello, my name is " + this.name;
+    }
+}
+
+let firstCustomer = new Customer('Revanth');
+let newMessage = firstCustomer.announce();
+
+let webHeading = document.querySelector('h1');
+webHeading!.textContent = newMessage;
