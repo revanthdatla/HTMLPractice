@@ -23,7 +23,7 @@ ES5 abstract operations contains rules of value conversion. The primary
 operations are `ToString`, `ToNumber`, `ToBoolean` and `TOPrimitive`.  
 
 ## `ToString`
-
+Takes any value and gives the representation of its value in string.
 
 ### JSON Stringification
 `JSON.stringify()` serializes a value to a JSON compatible string value.
@@ -69,3 +69,20 @@ the object has a `null` value for its `[[Prototype]]`.
 ## `ToBoolean`
 It is a common misconception that the values `1` and `0` are identical
 to `true/false`.
+
+# Philosophy of Coercion
+You don't deal with these type conversion corner cases by avoiding coercions.
+
+Instead, you have to adapt a coding style that makes value types plain and obvious.
+
+A quality JS program embraces coercions, making sure the types involved in every operation are clear.
+Thus, corner cases are safely managed.
+
+JavaScript dynamic typing is not a weakness, but it's strongest qualities.
+
+# implicit coercion
+Implicitness is way of abstracting. Hiding the unnecessary details, re-focusing the reader and increasing clarity.
+
+Is showing the extra details to the reader helpful or distracting?
+
+It is irresponsible to knowingly avoid usage of a feature that can improve code readability.
