@@ -1,5 +1,5 @@
 Callbacks
-===========
+=========
 
 A function is a individual, indivisible unit of operations, whereby
 inside the function, statements run in a predictable order. But at the
@@ -15,4 +15,4 @@ even more complex ones.
 
 Callback are not without their shortcomings.
 
- 
+

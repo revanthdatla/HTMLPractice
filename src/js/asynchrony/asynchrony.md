@@ -1,5 +1,6 @@
 Asynchrony
 ==========
+
 Asynchronous programming in JS is practically seen in cases like when a
 app is waiting for user input, requesting data from database, sending
 data across network and waiting for the response, performing repeated
@@ -39,8 +40,8 @@ immediately. The reason for this is because a I/O operation in a program
 is slow and blocking part of the programs. It may perform better for a
 browser to handle it asynchronously in the background.
 
-The best option to achieve predictability to `console.log()` statements in
-a program is either by using breakpoints or forcing a snapshot by
+The best option to achieve predictability to `console.log()` statements
+in a program is either by using breakpoints or forcing a snapshot by
 serializing in to a string using `JSON.stringify(...)`
 
 ## Event Loop
@@ -86,7 +87,7 @@ Parallel computing happens through processes and threads. Multiple
 threads in a process can share memory.
 
 An event loop, breaks its works into tasks and run it serially,
-disallowing parallel access and sharing of memory. 
+disallowing parallel access and sharing of memory.
 
 ## Run to Completion
 
@@ -150,7 +151,7 @@ jobs, which is related to event loop behaviour.
 ## Statement Ordering
 
 Compiler statement reordering is a micro-metaphor for concurrency and
-interaction. 
+interaction.
 
 The order in which we express statements in our code is not necessarily
 the same order as the JS engine will execute them. In various cases of
@@ -180,8 +181,5 @@ It is necessary to often do some interaction coordination between
 concurrent processes to ensure ordering or prevent race conditions.
 These processes can also cooperate by breaking themselves into smaller
 chunks and allow other process to interleave.
-
-
-
 
 

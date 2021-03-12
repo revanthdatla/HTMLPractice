@@ -1,25 +1,139 @@
-var student = {
-    firstName: 'Datla',
-    lastName: 'Revanth',
-    address: {
-        city: 'Rajahmundry'
+function defineWrokshop()
+{
+    var currentEnrollment = [], studentRecords = [];
+
+    var publicAPI = {
+        addStudent,
+        enrollStudent,
+        printCurrentEnrollment,
+        enrollPaidStudents,
+        remindUnpaidStudents
+    };
+
+    function addStudent(id, name, paid)
+    {
+        studentRecords.push({id, name, paid});
     }
-};
 
-// returns a string representation of an object
-console.log(student.toString());
+    function enrollStudent(id)
+    {
+        currentEnrollment.push(id);
+    }
 
-// returns a date converted to a string using the current locale
-console.log(new Date().toLocaleString());
+    function printCurrentEnrollment()
+    {
+        printRecords(currentEnrollment);
+    }
 
-// returns the primitive value of the specified object
-console.log(student.valueOf());
+    function enrollPaidStudents()
+    {
+        var recordsToEnroll = studentRecords.filter(needToEnroll);
 
-// Determine if an object has a specified property name
-console.log(student.hasOwnProperty('address'));
+        var idsToEnroll = recordsToEnroll.map(getStudentId);
 
-// Determine if an object exist in another object's prototype chain
-// TODO:
+        currentEnrollment = [...currentEnrollment, ...idsToEnroll];
+    }
 
-// Determine if the specified property is enumerable
+    function remindUnpaidStudents()
+    {
+        var unpaidIds = currentEnrollment.filter(notYetPaid);
 
+        printRecords(unpaidIds);
+    }
+
+    function printRecords(recordIds)
+    {
+        var records = recordIds.map(getStudentFromId);
+
+        records.sort(sortByNameAsc);
+
+        records.forEach(printRecord);
+    }
+
+    function getStudentFromId(studentId)
+    {
+        return studentRecords.find(matchId);
+
+        // *************************
+
+        function matchId(record)
+        {
+            return (record.id == studentId);
+        }
+    }
+
+    function sortByNameAsc(record1, record2)
+    {
+        if (record1.name < record2.name) return -1;
+        else if (record1.name > record2.name) return 1;
+        else return 0;
+    }
+
+    function printRecord(record)
+    {
+        console.log(`${record.name} (${record.id}): ${record.paid ? "Paid" : "Not Paid"}`);
+    }
+
+    function needToEnroll(record)
+    {
+        return (record.paid && !currentEnrollment.includes(record.id));
+    }
+
+    function getStudentId(record)
+    {
+        return record.id;
+    }
+
+    function notYetPaid(studentId)
+    {
+        var record = getStudentFromId(studentId);
+        return !record.paid;
+    }
+
+    return publicAPI;
+}
+
+var deepJS = defineWrokshop();
+
+deepJS.addStudent(313, "Frank", true);
+deepJS.addStudent(410, "Suzy", true);
+deepJS.addStudent(709, "Brian", false);
+deepJS.addStudent(105, "Henry", false);
+deepJS.addStudent(502, "Mary", true);
+deepJS.addStudent(664, "Bob", false);
+deepJS.addStudent(250, "Peter", true);
+deepJS.addStudent(375, "Sarah", true);
+deepJS.addStudent(867, "Greg", false);
+
+deepJS.enrollStudent(410)
+deepJS.enrollStudent(105)
+deepJS.enrollStudent(664)
+deepJS.enrollStudent(375)
+
+deepJS.printCurrentEnrollment();
+console.log("----");
+deepJS.enrollPaidStudents();
+deepJS.printCurrentEnrollment();
+console.log("----");
+deepJS.remindUnpaidStudents();
+
+/*
+	Bob (664): Not Paid
+	Henry (105): Not Paid
+	Sarah (375): Paid
+	Suzy (410): Paid
+	----
+	Bob (664): Not Paid
+	Frank (313): Paid
+	Henry (105): Not Paid
+	Mary (502): Paid
+	Peter (250): Paid
+	Sarah (375): Paid
+	Suzy (410): Paid
+	----
+	Bob (664): Not Paid
+	Henry (105): Not Paid
+*/
+
+
+// ********************************
