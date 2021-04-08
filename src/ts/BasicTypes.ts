@@ -11,8 +11,8 @@ class Customer {
     }
 }
 
-let firstCustomer = new Customer('Revanth');
-let newMessage = firstCustomer.announce();
+let firstCustomer: Customer = new Customer('Revanth');
+let newMessage: string = firstCustomer.announce();
 
 let webHeading = document.querySelector('h1');
 webHeading!.textContent = newMessage;
